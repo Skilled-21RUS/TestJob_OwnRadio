@@ -62,7 +62,7 @@ public class ResponseTask implements Runnable {
             lasttrack=main.CurrentTrackGUID;
         }
 
-        String URLtoSend=CreateURLString(testUserGUID,lasttrack,"",false);
+        String URLtoSend=CreateURLString(testUserGUID,lasttrack,"",true);
         String ResivedResponce=null;
         try {
             ResivedResponce= sendGet(URLtoSend);

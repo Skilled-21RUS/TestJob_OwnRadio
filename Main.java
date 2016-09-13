@@ -42,7 +42,7 @@ private boolean isPaused=false;
     {
         //Add a scene
         Group root = new Group();
-        Scene scene = new Scene(root, 500, 200);
+        Scene scene = new Scene(root, 150, 80);
 
         Button PlayPauseButton=new Button("Play/Pause");
         Button NextButton=new Button("Next");
