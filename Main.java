@@ -128,7 +128,7 @@ private boolean isPaused=false;
 public void Next(){
 
 
-new ResponseTask(this).run();
+new ResponseTask(this,false).run();
 
 
 }
@@ -175,7 +175,7 @@ if(isPaused){
             mediaPlayer.dispose();
         }
         mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setOnEndOfMedia(new ResponseTask(this));
+        mediaPlayer.setOnEndOfMedia(new ResponseTask(this,true));
          mediaView.setMediaPlayer(mediaPlayer);
 
     }

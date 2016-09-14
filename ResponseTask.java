@@ -12,6 +12,9 @@ import java.net.URL;
  */
 public class ResponseTask implements Runnable {
 
+
+
+
     // Строки для формирования URLзапроса
     String URL = "http://radio.redoc.ru/api/TrackSource/NextTrack";
     String User_IDpart="?userId=";
@@ -31,11 +34,12 @@ public class ResponseTask implements Runnable {
 
 
     Main main;
+    private boolean LithenedToTheEnd=false;  //прослушан ли трек до конца(ненажимая next);
 
 
-
-  public   ResponseTask(Main main){
+  public   ResponseTask(Main main,boolean LithenedToTheEnd){
       this.main=main;
+      this.LithenedToTheEnd=LithenedToTheEnd;
 
   }
 
@@ -62,7 +66,7 @@ public class ResponseTask implements Runnable {
             lasttrack=main.CurrentTrackGUID;
         }
 
-        String URLtoSend=CreateURLString(testUserGUID,lasttrack,"",true);
+        String URLtoSend=CreateURLString(testUserGUID,lasttrack,"",LithenedToTheEnd);
         String ResivedResponce=null;
         try {
             ResivedResponce= sendGet(URLtoSend);
